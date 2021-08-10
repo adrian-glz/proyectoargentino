@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="53981d89-e00e-4143-a9c1-7438acd9aeb7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT dias.nombre, empleados.`nombre`, turno.`fecha`, turno.`total`, turno.`descuento`, turno.`t6`, turno.`t5`, turno.`t4`, turno.`t3`, turno.`t2`, turno.`t1`, turno.`idturno`, turno.`idempleado`, dias.`nombre` AS dias_nombre FROM turno turno INNER JOIN empleados empleados ON turno.`idempleado` = empleados.`idempleado` AND turno.`idempleado` = empleados.`idempleado` INNER JOIN dia_turno dia_turno ON turno.`idturno` = dia_turno.`idturno` INNER JOIN dias dias ON dia_turno.`iddia` = dias.`iddias` AND dia_turno.`iddia` = dias.`iddias`;]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descuento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="t6" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="t5" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="t4" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="t3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="t2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="t1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idturno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idempleado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dias_nombre" class="java.lang.String"/>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="257" y="0" width="34" height="20" uuid="8d0aef75-65bd-4378-9d65-1f8b49a75311"/>
+				<text><![CDATA[t2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="f09e4bea-de82-4807-b0dc-b49e26b50163"/>
+				<text><![CDATA[dias_nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="0" width="34" height="20" uuid="c0cd9a7c-73a1-423c-b029-b9aecbd16a7c"/>
+				<text><![CDATA[t1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="105" y="0" width="100" height="20" uuid="73eac2cf-cff8-4b64-9d86-eb16db7223ef"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="368" y="0" width="23" height="20" uuid="17b9842a-3be7-4e85-8c2c-fd00a37a6457"/>
+				<text><![CDATA[t6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="0" width="23" height="20" uuid="957b73f3-ed87-43dc-95e4-e2c717189001"/>
+				<text><![CDATA[t4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="0" width="31" height="20" uuid="4cd6cf51-d09d-495d-9514-fb59797542a4"/>
+				<text><![CDATA[t3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="0" width="23" height="20" uuid="d234f8ca-775d-4a05-be05-436e84642e51"/>
+				<text><![CDATA[t5]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="eaf16939-1334-46ff-8168-af926ebedf8c"/>
+				<textFieldExpression><![CDATA[$F{dias_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="205" y="0" width="35" height="20" uuid="ebf2d05f-bf20-4565-8f92-37cf32cb87f3"/>
+				<textFieldExpression><![CDATA[$F{t1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="35" height="20" uuid="b4dd93b7-b349-4db7-8d53-7cbf066abe69"/>
+				<textFieldExpression><![CDATA[$F{t4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="368" y="0" width="23" height="20" uuid="6d02e18b-c63c-4b75-904c-23a60a0c9389"/>
+				<textFieldExpression><![CDATA[$F{t6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="0" width="35" height="20" uuid="4e041492-4c15-475e-83e3-9f74211ae22b"/>
+				<textFieldExpression><![CDATA[$F{t3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="0" width="23" height="20" uuid="69136fb7-080c-4c64-a819-579cc7c2753b"/>
+				<textFieldExpression><![CDATA[$F{t5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="35" height="20" uuid="3bdc6bb4-5fb6-4fb8-b322-3f629db6cdb5"/>
+				<textFieldExpression><![CDATA[$F{t2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
